@@ -1,71 +1,1201 @@
-body{
-    font-family:'Roboto', sans-serif;
-    font-size:16px;
-    margin:0px;
-    padding:0px;
-}
-body, .menu, .contenido, .footer {
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    min-width: 768px;
-}
-.menu{
-    position:fixed;
-    width:100%;
-    top:0px;
-    left:0px;
-    background-color: rgb(88,65,65);
-    text-align: center;
-    box-shadow: 0px 2px 2px rgba(0,0,0,.8);
-}
-.menu ul{
-    list-style: none;
-    padding:0px;
-    margin:0px;
-}
-.menu ul li{
-    display:inline;
-    color:white;
-}
-.menu ul li a{
-    display:inline-block;
-    color:white;
-    text-decoration: none;
-    padding:1em;
-    margin:0px;
-}
-.menu ul li a:hover{
-    background-color: rgba(245,233,233,.5);
-}
- .menu .title{
-     font-size:1.5em;
-     text-shadow: 1px 1px 2px #8B7474;
-     padding-left:2em;
-     padding-right: 2em;
- }
+/*--------------------inicio--------------------------------*/
 
-.contenido{
-    padding:1em;
-    margin-bottom: 2em;
-    margin-top:51px;
+.carusel .trail{
+		position:absolute;
+		padding:0px;
+		clear: both;
+		left:0px;
+		-webkit-transition: 0.5s left ease-out;
+		-moz-transition: 0.5s left ease-out;
+		-ms-transition: 0.5s left ease-out;
+		-o-transition: 0.5s left ease-out;
+		transition: 0.5s left ease-out;
+}
+
+.carusel .trail .new-container{
+		float:left;
+		margin:0px;
+		padding:0px;
+}
+.carusel .trail .new-container .img{
+		margin:0px;
+		padding:0px;
+}
+
+.carusel .navigate{
+		position:absolute;
+		text-align: center;
+		background-color: rgba(255,255,255,0.3);
+		bottom: 0px;
+		width:100%;
+		padding-top:1em;
+		padding-bottom: 1em;
+}
+.carusel .navigate div{
+		display: inline-block;
+		box-sizing: border-box;
+		margin: 0px 0.25em;
+		width:0.8em;
+		height: 0.8em;
+		background-color: #21d7d2;
+		border:1px solid #DDD;
+		border-radius: 90%;
+		cursor: pointer;
+}
+.carusel .navigate div.selected{
+		background-color: #DDD;
+		border:1px solid #333;
+}
+
+.carusel .arrows{
+		position:absolute;
+		top:160px;
+		box-sizing: border-box;
+		height: 160px;
+		width:55px;
+		padding:1em;
+		border-radius:50%;
+		background-image: -webkit-gradient(linear, left top, right bottom, color-stop(48%,rgba(255,255,255,0)), color-stop(49%,#333), color-stop(51%,#333), color-stop(52%,rgba(255,255,255,0))),
+											-webkit-gradient(linear, right top, left bottom, color-stop(48%,rgba(255,255,255,0)), color-stop(49%,#333), color-stop(51%,#333), color-stop(52%,rgba(255,255,255,0)));
+		background-image: -webkit-linear-gradient(-45deg, rgba(255,255,255,0) 48%,#333333 49%,#333333 51%,rgba(44, 80, 209, 0) 52%),
+											-webkit-linear-gradient(45deg, rgba(255,255,255,0) 48%,#333333 49%,#333333 51%,rgba(44, 80, 209, 0) 52%);
+		background-image: -o-linear-gradient(-45deg, rgba(255,255,255,0) 48%,#333333 49%,#333333 51%,rgba(44, 80, 209, 0) 52%),
+											-o-linear-gradient(45deg, rgba(255,255,255,0) 48%,#333333 49%,#333333 51%,rgba(44, 80, 209, 0) 52%);
+		background-position: -70px;
+		background-origin: padding-box;
+		background-repeat: no-repeat;
+		background-size: 240%;
+		opacity: 1;
+		-webkit-transition: 0.5s opacity ease-out;
+		-moz-transition: 0.5s opacity ease-out;
+		-ms-transition: 0.5s opacity ease-out;
+		-o-transition: 0.5s opacity ease-out;
+		transition: 0.5s opacity ease-out;
+}
+.carusel .arrows.right{
+		right: 0px;
+		background-position: -10px;
+		margin-right: 20px;
+
+}
+.carusel .arrows.hidden{
+		opacity: 0;
+		-webkit-transition: 0.5s opacity ease-out;
+		-moz-transition: 0.5s opacity ease-out;
+		-ms-transition: 0.5s opacity ease-out;
+		-o-transition: 0.5s opacity ease-out;
+		transition: 0.5s opacity ease-out;
+}
+
+.new-overlay {
+	background: rgba(102, 99, 91, 0.4);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+.new-arrival-title {
+	color: rgb(92, 57, 4);
+	font-size: 4.6em;
+}
+
+.new-arrival-title a{
+	color:#FFF;
+	text-decoration: none;
+}
+.new-arrival-title span {
+	display: block;
+	text-align: center;
+
+}
+.new-arrival-title .smaller-text {
+	font-size: 0.5em;
+	font-weight: 300;
+	letter-spacing: 3px;
+}
+.font-script { font-family: 'Dancing Script', cursive; }
+
+html{
+	font-family:sans-serif;
+	-webkit-text-size-adjust:100%;
+	-ms-text-size-adjust:100%}
+
+ul {
+	margin: 0;
+	padding:0;
+}
+* {	font-family: 'Open Sans', sans-serif; }
+body {	font-size: 14px; }
+.container {
+	top: 10px;
+	margin: 0 auto;
+	width:100%;
+	height:100%;
+	overflow: hidden;
+}
+
+/*-------------------parte inferior--------------------*/
+* {
+	margin:0;
+	padding:0;
 }
 
 .footer{
-    box-sizing: border-box;
-    position:fixed;
-    bottom: 0px;
-    left:0px;
-    margin:0px;
+    position: relative;
+		background: #000;
+    padding: 0.3em 1em;
+		text-align: center;
+		font-size: 1em;
     text-align: center;
-    padding:0.5em;
-    background-color: #454141;
-    color:white;
-    width:100%;
+    width: 100%;
+		color: #fff;
+		opacity: 0.8;
 }
 
+
+.subtitle1 {
+	display:flex;
+	margin-top: 10px;
+	margin-bottom: 1px;
+	vertical-align:text-top;
+	text-align: center;
+	padding-left: 520px;
+}
+.subtitle2 {
+	display:flex;
+	margin: 0px;
+	vertical-align:text-top;
+	text-align: center;
+	padding-left: 550px;
+}
+.acerca {
+	line-height: 1.8em;
+	margin: 80px auto 40px auto;
+	max-width: 800px;
+	vertical-align: middle;
+}
+.dark-bg {
+	background: #181818;
+	color: #DDD;
+}
+
+.gray-text { color: #838383; }
+.gold-text { color: #D0AF51; }
+
+/*------------------------Menu principal------------------------------------------*/
+.menu1{
+	position:fixed;
+	top:0px;
+	left:0px;
+	right: 50px;
+	width: 100%;
+	background-color: #50C592#;
+	padding:0px;
+	color:#FFF;
+	margin:0px;
+	text-align:right;
+	z-index: 500;
+}
+
+* {
+	margin:0;
+	padding:0;
+}
+
+header {
+		text-align: center;
+		padding: 10px;
+    width: 100%;
+		margin-left: 0px;
+    overflow: hidden;
+    height: 150px;
+    position: relative;
+		opacity: 0.8;
+}
+
+nav {
+    top:-1px;
+    position: absolute;
+    left:0;
+    right:0;
+		margin:20px auto;
+		width:100%;
+}
+
+nav > ul {
+	display:table;
+	width:100%;
+	background:#000;
+	position:relative;
+}
+
+nav > ul li {
+	display:table-cell;
+}
+
+/*Sub-menu*/
+nav > ul > li:hover > ul {
+	display:block;
+	height:100%;
+}
+
+nav > ul > li > ul {
+	display:block;
+	position:absolute;
+	background:#000;
+	left:0;
+	right:0;
+	overflow:hidden;
+	height:0%;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+nav > ul li a {
+	color:#fff;
+	display:block;
+	line-height:20px;
+	padding:20px;
+	position: relative;
+	text-align:center;
+	text-decoration:none;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+
+
+nav > ul > li > a span {
+	background:#174459;
+	display:block;
+	height:100%;
+	width:100%;
+	left:0;
+	position:absolute;
+	top:-55px;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+nav > ul > li > a span .icon {
+	display:block;
+	line-height:60px;
+}
+
+nav > ul > li > a:hover > span {
+	top:0;
+}
+
+/*Colores*/
+nav ul li a .primero {
+	background:rgb(1, 42, 255);opacity: 0.8;
+
+}
+
+nav ul li a .segundo {
+	background:#44d4ce;opacity: 0.8;
+}
+
+nav ul li a .tercero {
+	background:#1020b1;opacity: 0.8;
+}
+
+nav ul li a .cuarto {
+	background:#174459;opacity: 0.8;
+}
+
+nav ul li a .quinto {
+	background:#37a4d9;opacity: 0.8;
+}
+
+
 pre{
-    background-color: #333;
-    color:#1A9626;
-    padding:1em;
-    border-radius: 3px;
+			font-size: 3em;
+      align-content: center;
+      color:white;
+      text-shadow: 0 0 0.125em #000;
+  }
+
+	/*------------cols y sections de carrusel de productos----------------*/
+	.new-container3{
+			position: relative;
+			padding: 0.3em 1em;
+			width: 100%;
+			height: 270px;
+			opacity: 0.8;
+
+	}
+
+	.new-container4{
+			position: relative;
+			padding: 0.3em 1em;
+			width: 100%;
+			height: 470px;
+			opacity: 0.8;
+			margin-left: 10px;
+
+	}
+
+.new-container3 .cols1 img{
+	background-color:#000;
+	border-radius:50%;
+}
+
+
+
+	.new-container2 .cols img{
+		cursor: pointer;
+		display:inline-table;
+		position: relative;
+		background-color:#000;
+		border-radius:90%;
+
+	}
+
+	.sections{
+	    margin:0px;
+	    padding:0px;
+	}
+
+	.cols1{
+			margin-top: 1px;
+			margin-left:155px;
+	}
+	.cols{
+	  	margin-top: 1px;
+	    background-color:  #FFF;
+	    margin-bottom: 0.1em;
+	    margin-left:85px;
+	    max-width: 30em;
+	    padding:1em;
+	}
+
+.cols .sider{
+	visibility: collapse;
+}
+
+	.cols:hover  img {
+		position:relative;
+		cursor:pointer;
+	  transform: scale(1,1) rotate(0deg);
+	  z-index:0px;
+		float: right;
+		-webkit-filter:  brightness(80%);
+		background-color: #FFF;
+		border-radius: 0%;  /* Pequeño borde en las imagenes*/
+		-webkit-transition: all 0.5s ease;  /* Efecto suavizado para diferentes navegadores*/
+		-moz-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		-ms-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+	}
+
+	.cols:hover .sider {
+			visibility: visible;
+			cursor:pointer;
+			position:relative;
+			text-align: center;
+			color:#FFF;
+			background-color: rgba(200,200,200,0.1);
+			font-size: 1.5em;
+			text-shadow: 0px 0px 0.25em #000;
+			font-family: "Georgia", serif;
+
+	}
+
+
+	@media screen and (min-width:200px){
+
+	.img{
+		align-items: center;
+		align-content: center;
+	}
+	    .cols{
+	        float:left;
+	        box-sizing:border-box;
+	        height: 21em;
+
+	    }
+			.cols1{
+					float:left;
+			}
+	}
+
+
+/*------------contacto--------------------*/
+
+	.social li {
+		position: relative;
+		align-content: center;
+		margin-right: 1px;
+		margin-left: 1px;
+		display:inline-block;
+		width: 100%;
+	}
+
+	.form-control,
+	.btn { border-radius: 0;}
+	.form-control {
+		width: 20%;
+		background: #000;
+		color: #DDD;
+	}
+
+
+
+	.social2 {
+		position: fixed; /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+		right: 0; /* Establecemos la barra en la izquierda */
+		margin-right: 15px;
+		z-index: 2000; /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+	}
+
+		.social2 ul {
+			list-style: none;
+		}
+
+		.social2 ul li a {
+			display: inline-block;
+			color:#fff;
+			background: #000;
+			padding:20px 25px;
+			text-decoration: none;
+			-webkit-transition:all 500ms ease;
+			-o-transition:all 500ms ease;
+			transition:all 500ms ease; /* Establecemos una transición a todas las propiedades */
+		}
+
+		.social2 ul li .icon-facebook {background:#3b5998;} /* Establecemos los colores de cada red social, aprovechando su class */
+		.social2 ul li .icon-twitter {background: #00abf0;}
+		.social2 ul li .icon-mail {background: #666666;}
+
+		.social2 ul li a:hover {
+			background: #000; /* Cambiamos el fondo cuando el usuario pase el mouse */
+			padding: 10px 30px; /* Hacemos mas grande el espacio cuando el usuario pase el mouse */
+		}
+
+
+/*--------------segundo menu--------------------------------*/
+
+
+p{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000;
+	margin:1px;
+}
+h1{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:18px;
+	color:#000;
+	margin:1px;
+}
+.textopie{
+	color:#FFF;
+	text-align:center;
+}
+a.enlacecpw{
+	color:rgb(17, 71, 98);
+	text-decoration:none;
+}
+.titulos-internos{
+	font-family:"Times New Roman", Times, serif;
+	font-size:59px;
+	color:#999999;
+	border-bottom:9px #00C6F7 solid;
+	display:block;
+}
+
+/*---- Maquetacion -----*/
+
+#menu{
+
+	height:100%;
+	top: 0px;
+	position: relative;
+	opacity: 0.8;
+	margin-bottom: auto;
+}
+
+/*---- Menu principal -----*/
+#menu ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+#menu li a{
+	width:100%;
+	height:100%;
+	display:block;
+	background:url(public/imgs/fondo-boton.png) no-repeat;
+	background:linear-gradient(top,#0DC2FF,#007095);
+	background:-moz-linear-gradient(top,#0DC2FF,#007095);
+	background:-o-linear-gradient(top,#0DC2FF,#007095);
+	background:-ms-linear-gradient(top,#0DC2FF,#007095);
+	background:-webkit-linear-gradient(top,#0DC2FF,#007095);
+	border-radius:0px;
+	float:left;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:18px;
+	color:#FFF;
+	text-align:center;
+	text-decoration:none;
+	margin-right:0px;
+	padding-top:30px;
+	position:relative;
+	transition:transform 0.4s;
+	-moz-transition:-moz-transform 0.4s;
+	-ms-transition:-ms-transform 0.4s;
+	-o-transition:-o-transform 0.4s;
+	-webkit-transition:-webkit-transform 0.4s;
+}
+#menu li a:hover{
+	transform:scale(1.3,1.3) rotate(20deg);
+	-moz-transform:scale(1.3,1.3) rotate(20deg);
+	-o-transform:scale(1.3,1.3) rotate(20deg);
+	-ms-transform:scale(1.3,1.3) rotate(20deg);
+	-webkit-transform:scale(1.3,1.3) rotate(20deg);
+}
+/*  media tamaños*/
+
+
+	@media screen and (min-width:500px){
+
+		.container {
+			top: 10px;
+			margin: 0 auto;
+			width:100%;
+			height:100%;
+			overflow: hidden;
+		}
+		.carusel{
+				position:relative;
+				padding:0px;
+				width:324px;
+				height:180px;
+				margin-top: 0px;
+				bottom: 1em;
+				margin-left:1px;
+				margin:0em auto;
+				overflow: hidden;
+				background-size:cover;
+        background-position: center;
+        -webkit-transition: 0.5s min-height ease;
+        -moz-transition: 0.5s min-height ease;
+        -o-transition: 0.5s min-height ease;
+        transition: 0.5s min-height ease;
+		}
+	}
+
+	@media screen and (min-width:720px){
+
+		.container {
+			top: 10px;
+			margin: 0 auto;
+			width:100%;
+			height:100%;
+			overflow: hidden;
+		}
+
+		.carusel{
+				position:relative;
+				padding:0px;
+				width:824px;
+				height:380px;
+				margin-top: 0px;
+				bottom: 1em;
+				margin-left:1px;
+				margin:0em auto;
+				overflow: hidden;
+				background-size:cover;
+        background-position: center;
+        -webkit-transition: 0.5s min-height ease;
+        -moz-transition: 0.5s min-height ease;
+        -o-transition: 0.5s min-height ease;
+        transition: 0.5s min-height ease;
+		}
+	}
+
+	@media screen and (min-width:1024px){
+
+		.container {
+			top: 10px;
+			margin: 0 auto;
+			width:100%;
+			height:100%;
+			overflow: hidden;
+		}
+
+		.carusel{
+				position:relative;
+				padding:0px;
+				width:1200px;
+				height:380px;
+				margin-top: 0px;
+				bottom: 1em;
+				margin-left:1px;
+				margin:0em auto;
+				overflow: hidden;
+				background-size:cover;
+        background-position: center;
+        -webkit-transition: 0.5s min-height ease;
+        -moz-transition: 0.5s min-height ease;
+        -o-transition: 0.5s min-height ease;
+        transition: 0.5s min-height ease;
+		}
+	}
+
+	@media screen and (min-width:1255px){
+
+		.container {
+			top: 10px;
+			margin: 0 auto;
+			width:100%;
+			height:100%;
+			overflow: hidden;
+		}
+		.carusel {
+				position:relative;
+				padding:0px;
+				width:1500px;
+				height:380px;
+			margin-top: 0px;
+				bottom: 1em;
+				margin-left:1px;
+				margin:0em auto;
+				overflow: hidden;
+				background-size:cover;
+        background-position: center;
+        -webkit-transition: 0.5s min-height ease;
+        -moz-transition: 0.5s min-height ease;
+        -o-transition: 0.5s min-height ease;
+        transition: 0.5s min-height ease;
+		}
+	}
+	@media screen and (min-width:1360px){
+
+		.container {
+			top: 10px;
+			margin: 0 auto;
+			width:100%;
+			height:100%;
+			overflow: hidden;
+		}
+		.carusel {
+				position:relative;
+				padding:0px;
+				width:1900px;
+				height:380px;
+				margin-top: 0px;
+				margin-bottom: 1px;
+				bottom: 1em;
+				margin-left:1px;
+				margin:0em auto;
+				overflow: hidden;
+				background-size:cover;
+        background-position: center;
+        -webkit-transition: 0.5s min-height ease;
+        -moz-transition: 0.5s min-height ease;
+        -o-transition: 0.5s min-height ease;
+        transition: 0.5s min-height ease;
+		}
+		.carusel .arrows{
+				position:absolute;
+				top:160px;
+				box-sizing: border-box;
+				height: 160px;
+				width:55px;
+				padding:1em;
+				border-radius:50%;
+				background-image: -webkit-gradient(linear, left top, right bottom, color-stop(48%,rgba(255,255,255,0)), color-stop(49%,#333), color-stop(51%,#333), color-stop(52%,rgba(255,255,255,0))),
+													-webkit-gradient(linear, right top, left bottom, color-stop(48%,rgba(255,255,255,0)), color-stop(49%,#333), color-stop(51%,#333), color-stop(52%,rgba(255,255,255,0)));
+				background-image: -webkit-linear-gradient(-45deg, rgba(255,255,255,0) 48%,#333333 49%,#333333 51%,rgba(44, 80, 209, 0) 52%),
+													-webkit-linear-gradient(45deg, rgba(255,255,255,0) 48%,#333333 49%,#333333 51%,rgba(44, 80, 209, 0) 52%);
+				background-image: -o-linear-gradient(-45deg, rgba(255,255,255,0) 48%,#333333 49%,#333333 51%,rgba(44, 80, 209, 0) 52%),
+													-o-linear-gradient(45deg, rgba(255,255,255,0) 48%,#333333 49%,#333333 51%,rgba(44, 80, 209, 0) 52%);
+				background-position: -70px;
+				background-origin: padding-box;
+				background-repeat: no-repeat;
+				background-size: 240%;
+				opacity: 1;
+				-webkit-transition: 0.5s opacity ease-out;
+				-moz-transition: 0.5s opacity ease-out;
+				-ms-transition: 0.5s opacity ease-out;
+				-o-transition: 0.5s opacity ease-out;
+				transition: 0.5s opacity ease-out;
+		}
+		.carusel .arrows.right{
+				right: 0px;
+				background-position: -10px;
+				margin-right: 20px;
+
+		}
+		.carusel .arrows.hidden{
+				opacity: 0;
+				-webkit-transition: 0.5s opacity ease-out;
+				-moz-transition: 0.5s opacity ease-out;
+				-ms-transition: 0.5s opacity ease-out;
+				-o-transition: 0.5s opacity ease-out;
+				transition: 0.5s opacity ease-out;
+		}
+	}
+	@media screen and (min-width:1366px){
+
+		.container {
+			top: 10px;
+			margin: 0 auto;
+			width:100%;
+			height:100%;
+			overflow: hidden;
+		}
+
+		.carusel {
+				position:relative;
+				padding:0px;
+				width:5000px;
+				height:680px;
+				margin-top: 0px;
+				bottom: 1em;
+				margin-left:1px;
+				margin:0em auto;
+				overflow: hidden;
+				background-size:cover;
+        background-position: center;
+        -webkit-transition: 0.5s min-height ease;
+        -moz-transition: 0.5s min-height ease;
+        -o-transition: 0.5s min-height ease;
+        transition: 0.5s min-height ease;
+		}
+
+	}
+
+
+/*----------carru--------------------*/
+@import "compass/reset";
+@import "compass/css3";
+
+@include reset-html5;
+
+*
+{
+	@include box-sizing('border-box');
+}
+
+a
+{
+	color: #CCC;
+	text-decoration: none;
+}
+
+
+	//@include linear-gradient(color-stops(#333, #000));
+	background: #FFF;
+	min-height: 100%;
+
+
+	overflow-x: hidden; // Used to prevent scroll bars appearing for some 3d transforms
+
+	margin: 0;
+
+		div#slider
+		{
+			@include border-radius(3px);
+			@include box-sizing('content-box');
+			padding: 0px;
+			background: rgba(#000, 0.3);
+
+			-webkit-box-shadow: 0 1px 0 rgba(#FFF, 0.1), 0 0 8px rgba(#000, 0.9) inset;
+
+			div.fluxslider
+			{
+				div.surface
+				//div.images
+				{
+					width: 100%;
+					height: 100%;
+					border: 1px solid rgba(#FFF, 0.1);
+					@include box-sizing('content-box');
+				}
+
+			}
+		}
+
+
+/*Transition Gallery */
+body#transitiongallery
+{
+
+		width: 100%;
+
+		div#slidercontainer
+		{
+			position: absolute;
+
+			div#slider
+			{
+
+			}
+		}
+
+}
+
+
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/**
+ * 1. Prevent system color scheme's background color being used in Firefox, IE,
+ *    and Opera.
+ * 2. Prevent system color scheme's text color being used in Firefox, IE, and
+ *    Opera.
+ * 3. Set default font family to sans-serif.
+ * 4. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }
