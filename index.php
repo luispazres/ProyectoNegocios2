@@ -33,6 +33,30 @@
         case "formulario":
             require_once("controllers/formulario.control.php");
             break;
+        case "inicio":
+            require_once("controllers/inicio.control.php");
+            break;
+        case "productos":
+            require_once("controllers/productos.control.php");
+            break;
+        case "conocenos":
+            require_once("controllers/conocenos.control.php");
+            break;
+        case "contacto":
+            require_once("controllers/contacto.control.php");
+            break;
+        case "estudiantes":
+                require_once("controllers/estudiantes.control.php");
+            break;
+        case "publico":
+                    require_once("controllers/publico.control.php");
+            break;
+        case "Empresas":
+                require_once("controllers/registro.control.php");
+            break;
+        case "patrocinadores":
+                    require_once("controllers/patrocinadores.control.php");
+        break;
         default:
             require_once("controllers/error.control.php");
 
