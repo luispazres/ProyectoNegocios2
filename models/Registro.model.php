@@ -18,7 +18,7 @@
  $password);
 
         if(ejecutarNonQuery($strsql)){
-            return getLastInserId();
+            return 1;//getLastInserId();
         }
         return 0;
     }

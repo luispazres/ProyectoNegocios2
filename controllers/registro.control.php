@@ -44,10 +44,11 @@
                               $htmlData["txtUserName"],
                               $htmlData["txtUserPrimerApellido"],
                               $htmlData["txtUserSegundoApellido"],
-                              $htmlData["txtUserFechaNac"],
                               $htmlData["txtUserTelefono"],
                               $htmlData["txtUserIdentidad"],
+                              $htmlData["txtUserFechaNac"],
                               $htmlData["txtPswd"]);
+
 
       //  }
 
