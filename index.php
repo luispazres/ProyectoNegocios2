@@ -27,8 +27,8 @@
         case "registro":
             require_once("controllers/registro.control.php");
             break;
-        case "althome":
-            require_once("controllers/althome.control.php");
+        case "productoslayout":
+            require_once("controllers/productoslayout.control.php");
             break;
         case "formulario":
             require_once("controllers/formulario.control.php");
@@ -49,13 +49,19 @@
                 require_once("controllers/estudiantes.control.php");
             break;
         case "publico":
-                    require_once("controllers/publico.control.php");
+                require_once("controllers/publico.control.php");
             break;
         case "Empresas":
                 require_once("controllers/registro.control.php");
             break;
         case "patrocinadores":
-                    require_once("controllers/patrocinadores.control.php");
+                require_once("controllers/patrocinadores.control.php");
+        break;
+        case "pay":
+                require_once("controllers/pay.control.php");
+        break;
+        case "carrito":
+                require_once("controllers/carrito.control.php");
         break;
         default:
             require_once("controllers/error.control.php");

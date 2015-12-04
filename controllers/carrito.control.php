@@ -1,7 +1,8 @@
 <?php
-/* Home Controller
+/* Categorias Controller
  * 2015-12-3
- * Last Modification 2015-12-3 12:45
+ * Created By OJBA
+ * Last Modification 2015-12-3 17:08
  */
  require_once("libs/template_engine.php");
  require_once("libs/parameters.php");
@@ -9,8 +10,9 @@
 
   function run(){
     $productos = array();
-    $productos = obtenerProductos();
-    renderizar("productos", array("productos" => $productos));
+    $productos = obtenerProducto();
+
+    renderizar("carrito", array("productos" => $productos));
   }
 
  run();

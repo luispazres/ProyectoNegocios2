@@ -4,13 +4,13 @@ var app = angular.module("app", ['ngRoute','ng-Shop']);
 //las rutas que vamos a utilizar para nuestro ejemplo
 app.config(function($routeProvider)
 {
-	$routeProvider.when("/", {
-		templateUrl : "home.html",
-		controller : "homeController"
+	$routeProvider.when("views/", {
+		templateUrl : "productos.view.tpl",
+
 	})
-	.when("/pay", {
-		templateUrl : "pay.html",
-		controller : "homeController"
+	.when("views/pay", {
+		templateUrl : "pay.view.tpl",
+
 	})
 	.otherwise({ reditrectTo : "/" });
 });
@@ -33,7 +33,7 @@ app.controller("homeController", function($scope, $shop)
 		userData.rm = 2;
 		//url retorno paypal lado server, envia data post
 		userData.successUrl = "http://localhost/cartAngularServer/return.php";
-		userData.cancelUrl = "http://localhost/cartAngular/#/";
+		userData.cancelUrl = "http://localhost/html/Grace/index.php?page=productos";
 		userData.cbt = "Volver a la tienda";
 		userData.formClass = "#formPaypal";
 		return userData;
@@ -47,9 +47,9 @@ app.controller("homeController", function($scope, $shop)
 	{
 		//alert(producto.total); return;
 		var product = {};
-		product.id = producto.id;
-		product.price = producto.price;
-		product.name = producto.name;
+		idproductos = idproductos;
+		precio = precio;
+		nombre = nombre;
 		product.category = producto.category;
 		product.qty = parseInt(producto.total || 1,10);
 		$shop.add(product);
@@ -71,7 +71,7 @@ app.controller("homeController", function($scope, $shop)
 			return;
 		}
 	}
-	
+
 	/**
 	* @desc - elimina el contenido del carrito
 	*/
@@ -99,7 +99,7 @@ app.controller("homeController", function($scope, $shop)
 	/**
 	* @desc - array de objetos con productos para el ejemplo
 	*/
-	$scope.productosTienda = 
+	$scope.productosTienda =
 	[
 	{"id": 1, "category": "Detalles", "name": "Campanas", "price": 0.9, "picture": "imgs/campanas.jpg"},
 	{"id": 2, "category": "Detalles", "name": "Carrito", "price": 1, "picture": "imgs/carrito.jpg"},
@@ -114,4 +114,3 @@ app.controller("homeController", function($scope, $shop)
 	{"id": 11, "category": "Detalles", "name": "Otros", "price": 0.5, "picture": "imgs/otros.jpg"}
 	];
 });
-

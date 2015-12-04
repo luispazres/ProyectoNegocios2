@@ -53,7 +53,7 @@ pre{
   </nav>
 
 
-  <div class="footer">
+
         <center><div class="new-container3">
             <div class="sections cols1">
             <center><img src="public/imgs/Littmann_Logo_bw.jpg"  width="440" height="270"></center>
@@ -71,4 +71,3 @@ pre{
             <center><img src="public/imgs/prestige-medical-limited-L73684.jpg" width="440" height="270"></center>
             </div>
         </div></center>
-    </div>
