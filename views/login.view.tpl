@@ -8,8 +8,8 @@
 <form action="index.php?page=login" method="post">
     <label>Usuario</label><input type="text" name="txtUser" value="{{txtUser}}"/>
     <br>
-    <label>Contraseña</label><input type="password" name="txtPswd" />
+    <label>Contraseña</label><input type="password" name="txtPswd" value="{{txtPswd}}" />
     <br>
     <input type="submit" name="btnLogin" value="Ingresar" />
-    <input type="hidden" name="returnUrl" value="{{returnUrl}}"/>  
+    <input type="hidden" name="returnUrl" value="{{returnUrl}}"/>
 </form>

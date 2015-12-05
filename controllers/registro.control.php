@@ -32,13 +32,18 @@
       $pswdCnf = $_POST["txtPswdCnf"];
 
       if($pswd == $pswdCnf){
-        //seguir proceso de registro
-        // verificar que el usuario no exista previamente
-      /*  $checkUser = obtenerUsuario($htmlData["txtEmail"]);
-        if(count($checkUser)!=0){
-          $htmlData["mostrarErrores"] = true;
-          $htmlData["errores"][]=array("errmsg"=>"Correo Electrónico ya Usado!");
-        }*///else{
+          // geenrar la contraseña salada (salting)
+          $fchingreso = time(); //date("YmdHisu"); //20141104203730069785
+
+          $pswdSalted = "";
+          if($fchingreso % 2 == 0){
+            $pswdSalted = $pswd . $fchingreso;
+          }else{
+            $pswdSalted = $fchingreso . $pswd;
+          }
+
+          $pswdSalted = md5($pswdSalted);
+
 
           insertUsuario(   $htmlData["txtEmail"],
                               $htmlData["txtUserName"],
@@ -47,7 +52,7 @@
                               $htmlData["txtUserTelefono"],
                               $htmlData["txtUserIdentidad"],
                               $htmlData["txtUserFechaNac"],
-                              $htmlData["txtPswd"]);
+                              $pswdSalted,2, $fchingreso);
 
 
       //  }
