@@ -12,6 +12,7 @@
             <script src="public/css/foundation.min.css"></script>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
           <script src="public/css/flux.min.js" type="text/javascript" charset="utf-8"></script>
+<<<<<<< HEAD
           <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
           <!--cdn con el modulo ngRoute de angular-->
           <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
@@ -19,6 +20,8 @@
           <script type="text/javascript" src="public/css/cart.js"></script>
           <!--archivo app.js, donde hemos definido nuestro modulo app-->
           <script type='text/javascript' src="public/css/app.js"></script>
+=======
+>>>>>>> 3d069a067f38060a01acf740c884e849940f593c
             <script type="text/javascript" charset="utf-8">
                 $(function(){
                   if(!flux.browser.supportsTransitions)
@@ -42,7 +45,11 @@
                 <header>
                   <ul class="menu1">
                       <li><a href></a> </li>
+<<<<<<< HEAD
                     <li><a href="index.php?page=login">Ingresar</a> </li>
+=======
+                    <li><a href>Bag</a> </li>
+>>>>>>> 3d069a067f38060a01acf740c884e849940f593c
                     </ul>
                 <nav>
                   <ul>

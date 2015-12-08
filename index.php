@@ -49,12 +49,17 @@
                 require_once("controllers/estudiantes.control.php");
             break;
         case "publico":
+<<<<<<< HEAD
                 require_once("controllers/publico.control.php");
+=======
+                    require_once("controllers/publico.control.php");
+>>>>>>> 3d069a067f38060a01acf740c884e849940f593c
             break;
         case "Empresas":
                 require_once("controllers/registro.control.php");
             break;
         case "patrocinadores":
+<<<<<<< HEAD
                 require_once("controllers/patrocinadores.control.php");
         break;
         case "pay":
@@ -62,6 +67,9 @@
         break;
         case "carrito":
                 require_once("controllers/carrito.control.php");
+=======
+                    require_once("controllers/patrocinadores.control.php");
+>>>>>>> 3d069a067f38060a01acf740c884e849940f593c
         break;
         default:
             require_once("controllers/error.control.php");
