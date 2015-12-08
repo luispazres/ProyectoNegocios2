@@ -4,6 +4,15 @@ var app = angular.module("app", ['ngRoute','ng-Shop']);
 //las rutas que vamos a utilizar para nuestro ejemplo
 app.config(function($routeProvider)
 {
+<<<<<<< HEAD
+	$routeProvider.when("views/", {
+		templateUrl : "productos.view.tpl",
+
+	})
+	.when("views/pay", {
+		templateUrl : "pay.view.tpl",
+
+=======
 	$routeProvider.when("/", {
 		templateUrl : "home.html",
 		controller : "homeController"
@@ -11,6 +20,7 @@ app.config(function($routeProvider)
 	.when("/pay", {
 		templateUrl : "pay.html",
 		controller : "homeController"
+>>>>>>> 3d069a067f38060a01acf740c884e849940f593c
 	})
 	.otherwise({ reditrectTo : "/" });
 });
@@ -33,7 +43,11 @@ app.controller("homeController", function($scope, $shop)
 		userData.rm = 2;
 		//url retorno paypal lado server, envia data post
 		userData.successUrl = "http://localhost/cartAngularServer/return.php";
+<<<<<<< HEAD
+		userData.cancelUrl = "http://localhost/html/Grace/index.php?page=productos";
+=======
 		userData.cancelUrl = "http://localhost/cartAngular/#/";
+>>>>>>> 3d069a067f38060a01acf740c884e849940f593c
 		userData.cbt = "Volver a la tienda";
 		userData.formClass = "#formPaypal";
 		return userData;
@@ -47,9 +61,15 @@ app.controller("homeController", function($scope, $shop)
 	{
 		//alert(producto.total); return;
 		var product = {};
+<<<<<<< HEAD
+		idproductos = idproductos;
+		precio = precio;
+		nombre = nombre;
+=======
 		product.id = producto.id;
 		product.price = producto.price;
 		product.name = producto.name;
+>>>>>>> 3d069a067f38060a01acf740c884e849940f593c
 		product.category = producto.category;
 		product.qty = parseInt(producto.total || 1,10);
 		$shop.add(product);
@@ -71,7 +91,11 @@ app.controller("homeController", function($scope, $shop)
 			return;
 		}
 	}
+<<<<<<< HEAD
+
+=======
 	
+>>>>>>> 3d069a067f38060a01acf740c884e849940f593c
 	/**
 	* @desc - elimina el contenido del carrito
 	*/
@@ -99,7 +123,11 @@ app.controller("homeController", function($scope, $shop)
 	/**
 	* @desc - array de objetos con productos para el ejemplo
 	*/
+<<<<<<< HEAD
+	$scope.productosTienda =
+=======
 	$scope.productosTienda = 
+>>>>>>> 3d069a067f38060a01acf740c884e849940f593c
 	[
 	{"id": 1, "category": "Detalles", "name": "Campanas", "price": 0.9, "picture": "imgs/campanas.jpg"},
 	{"id": 2, "category": "Detalles", "name": "Carrito", "price": 1, "picture": "imgs/carrito.jpg"},
@@ -114,4 +142,7 @@ app.controller("homeController", function($scope, $shop)
 	{"id": 11, "category": "Detalles", "name": "Otros", "price": 0.5, "picture": "imgs/otros.jpg"}
 	];
 });
+<<<<<<< HEAD
+=======
 
+>>>>>>> 3d069a067f38060a01acf740c884e849940f593c
